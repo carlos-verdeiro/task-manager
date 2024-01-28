@@ -14,3 +14,4 @@ try {
 catch (Exception $e) {
     echo "Erro genérico: " . $e->getMessage();
 }
+//------------CONEXÃO------------

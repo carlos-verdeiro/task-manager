@@ -8,7 +8,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form method="get"><!--Formulário para criar tarefa-->
+                    <form method="post" action="database/insercao.php"><!--Formulário para criar tarefa-->
 
                         <div class="form-floating mb-3"><!--Título principal da tarefa-->
                             <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Título" minlength="3" maxlength="40" required>
