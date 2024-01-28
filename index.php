@@ -18,6 +18,7 @@
     </button>
 
     <?php
+    include_once("database/conexao.php");
     include_once("templates/criarTarefaModal.php");
     ?>
 
