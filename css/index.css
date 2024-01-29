@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(235, 217, 180);
+}
+
+header{
+    height: 13vh;
+    background-color: brown;
+}
+
+main{
+    height: 77vh;
+    background-color: rgb(235, 217, 180);
+}
+
+footer{
+    height: 10vh;
+    background-color: blue;
+}
+
+#tarefas{
+    background-color: rgb(255, 170, 0);
+    overflow-y: auto;
+    height: 77vh;
+    direction: ltr;
+    overflow-x: hidden;
+}
+
+#detalhes{
+    background-color: rgb(235, 217, 180);
+}
