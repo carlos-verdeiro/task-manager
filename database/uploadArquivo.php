@@ -29,23 +29,17 @@ $arq ->bindValue(":pArquivo", $path);
 
 $arq -> execute();
 
-if ($arq->rowCount() > 0){
-    echo"arquivo enviado com sucesso!";
-}
+if ($arq->rowCount() == 0)//Verifica de alguma linha foi alterada
 
-/*
-$ligacao = $pdo->prepare("UPDATE tarefas SET idAnexo = ");
-
-$ligacao ->bindValue(":nArquivo", $nomeArquivo);
-$ligacao ->bindValue(":pArquivo", $path);
-
-$ligacao -> execute();
-
-UPDATE tabela_filha
-SET coluna_chave_estrangeira = novo_valor
-WHERE condição_para_selecionar_as_linhas;
-
-*/
+    die("Arquivo não cadastrado com sucesso!");
 
 
-//FALTA CONECTAR COM CHAVE ESTRANGEIRA-------------------------------
+//-------------UPDATE DA CHAVE ESTRANGEIRA-----------------
+$idCriadoArquivo = $pdo->lastInsertId(); // Recupera o último id inserido
+
+$ligacao = $pdo->prepare("UPDATE tarefas SET idAnexo = :idArquivo WHERE id = :idTarefa");
+
+$ligacao->bindValue(":idArquivo", $idCriadoArquivo, PDO::PARAM_INT);
+$ligacao->bindValue(":idTarefa", $idCriadoTarefa, PDO::PARAM_INT);
+
+$ligacao->execute();

@@ -35,6 +35,7 @@ $res->bindValue(":i",$dInt);
 $res->execute();
 
 if ($res->rowCount() > 0) {
+    $idCriadoTarefa = $pdo->lastInsertId();//Recupera o ultimo id inserido
     echo"Cadastro relizado com sucesso!";
 }
 
