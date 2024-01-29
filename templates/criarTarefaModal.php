@@ -8,7 +8,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form method="post" action="database/insercao.php"><!--Formulário para criar tarefa-->
+                    <form method="post" action="database/insercao.php" enctype="multipart/form-data"><!--Formulário para criar tarefa-->
 
                         <div class="form-floating mb-3"><!--Título principal da tarefa-->
                             <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Título" minlength="3" maxlength="40" required>
@@ -38,8 +38,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="anexo" class="form-label">Anexo:</label>
-                            <input class="form-control" type="file" id="anexo" name="anexo">
+                            <label for="anexo" class="form-label">Anexar imagem (Max: 2MB):</label>
+                            <input class="form-control" type="file" id="anexo" name="anexo" accept="image/*">
                         </div>
 
 

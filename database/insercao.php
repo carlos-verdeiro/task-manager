@@ -20,8 +20,7 @@ $pdo->query();
 
 É quando não precisa fazer nenhuma preparação ou substituição
 */
-
-$res = $pdo->prepare("INSERT INTO tarefas(titulo, observacao, data, hora, intdia, anexo) VALUES (:t, :o, :d, :h, :i, :a);"); 
+$res = $pdo->prepare("INSERT INTO tarefas(titulo, observacao, data, hora, intdia) VALUES (:t, :o, :d, :h, :i);"); 
 
 $res->bindValue(":t", $_POST["titulo"]);
 $res->bindValue(":o", $_POST["observacao"]);
@@ -33,8 +32,12 @@ if (isset($_POST["dInteiro"])) {
 }
 $res->bindValue(":h",($dInt == "1") ? null : $_POST["hora"]);
 $res->bindValue(":i",$dInt);
-$res->bindValue(":a","teste");
 $res->execute();
 
+if ($res->rowCount() > 0) {
+    echo"Cadastro relizado com sucesso!";
+}
 
-//Continuar o vídeo https://youtu.be/sLn-yMQKcHA?si=XBNMQZXazxpqGOOT&t=443
+if ($_FILES["anexo"]["error"] != 4)/*Verificando se o upload está vazio*/ {
+    include_once("uploadArquivo.php");//Fazendo upload do arquivo para o servidor
+}
