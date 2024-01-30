@@ -40,7 +40,7 @@
     height: 50px;
     width: 85%;
     text-overflow: ellipsis;
-
+    margin: 0;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;

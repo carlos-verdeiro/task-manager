@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(235, 217, 180);
+    background-color: rgb(249, 247, 201);
 }
 
 header{
@@ -9,7 +9,7 @@ header{
 
 main{
     height: 77vh;
-    background-color: rgb(235, 217, 180);
+    background-color: rgb(249, 247, 201);
 }
 
 footer{
@@ -18,7 +18,7 @@ footer{
 }
 
 #tarefas{
-    background-color: rgb(255, 170, 0);
+    background-color: rgb(249, 247, 201);
     overflow-y: auto;
     height: 77vh;
     direction: ltr;
@@ -26,5 +26,5 @@ footer{
 }
 
 #detalhes{
-    background-color: rgb(235, 217, 180);
+    background-color: rgb(249, 247, 201);
 }
