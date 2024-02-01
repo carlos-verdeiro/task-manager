@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/criarTarefa.css">
 <!-- Modal Criador de tarefa -->
 <div class="modal fade" id="novaTarefa" tabindex="-1" aria-labelledby="novaTarefa" aria-hidden="true">
         <div class="modal-dialog">
