@@ -24,11 +24,11 @@
     </header>
 
     <main class="container-fluid row mx-auto text-center"> <!--PRINCIPAL-->
-        <section id="detalhes" class="container-fluid col">
+        <section id="detalhes" class="container-fluid col"><!--Detalhes da tarefa selecionada-->
             ...
         </section>
 
-        <section id="tarefas" class="container-fluid col p-3 overflow-auto">
+        <section id="tarefas" class="container-fluid col p-3 overflow-auto"><!--Lista de tarefas existentes-->
             <?php include_once("templates/exibirTarefas.php")?>
         </section>
     </main>

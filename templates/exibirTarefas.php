@@ -37,7 +37,6 @@ if ($linhas) {
         }
 
         echo '</div>';
-        echo '';
         echo $rodape;
         echo '</div>';
         echo '</content>';
