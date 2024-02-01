@@ -1,0 +1,64 @@
+.blocoTarefa {
+    background-color: bisque;
+    border-radius: 100px;
+    height: auto;
+    min-height: 20vh;
+    max-height: 30vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+    overflow: hidden;
+}
+
+.header p{
+    margin:0;
+}
+
+.corpo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.obs {
+    height: 50px;
+    width: 85%;
+    text-overflow: ellipsis;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.rodapeAnexo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+    flex-wrap: wrap;
+    width: 65%;
+}
+
+.rodapeAnexo p{
+    margin: 0;
+}
