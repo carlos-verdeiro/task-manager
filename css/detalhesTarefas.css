@@ -16,11 +16,17 @@
     justify-content: space-around;
     flex-direction: row;
     min-height: 10%;
-
+    flex-wrap: wrap;
 }
 
 #dataDetalhes{
     height: auto;
+    min-width: 50%;
+}
+
+#horaDetalhes{
+    height: auto;
+    min-width: 50%;
 }
 
 #divHoraDataSozinho{
@@ -29,6 +35,7 @@
     justify-content: space-around;
     flex-direction: row;
     min-height: 20%;
+    flex-wrap: wrap;
 }
 
 #observacaoDetalhes{
@@ -40,12 +47,13 @@
 
 #divAnexoBotoes{
 
-    min-height: 30%;
-    width: 100%;
+    height: 30%;
+    width: 48vw;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #contentAnexo
@@ -54,15 +62,18 @@
 }
 
 #anexoDetalhes{
-    height: 20vh;
+    max-height: 20vh;
 }
 
 #contentBotoes{
-    width: 50%;
+    width: 49%;
+    min-width: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-left: 2px;
+    margin-top: 2px;
 }
 
 #contentBotoesSozinho{

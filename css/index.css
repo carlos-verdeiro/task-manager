@@ -18,11 +18,9 @@ footer{
 }
 
 #tarefas{
-    background-color: rgb(249, 247, 201);
-    overflow-y: auto;
+    background-color: rgb(255, 247, 0);
     height: 77vh;
     direction: ltr;
-    overflow-x: hidden;
 }
 
 #detalhes{
@@ -30,4 +28,5 @@ footer{
     height: 77vh;
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: aqua;
 }

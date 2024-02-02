@@ -20,14 +20,14 @@
         </button>
     </header>
 
-    <main class="container-fluid row mx-auto text-center"> <!--PRINCIPAL-->
+    <main class="container-fluid row mx-auto text-center p-0"> <!--PRINCIPAL-->
 
 
 
 
 
 
-        <section id="detalhes" class="container-fluid p-2 col overflow-auto"><!--Detalhes da tarefa selecionada-->
+        <section id="detalhes" class="container-fluid p-2 col overflow-y-auto"><!--Detalhes da tarefa selecionada-->
             <?php include_once("templates/detalhesTarefas.php")?>
         </section>
 
