@@ -62,3 +62,8 @@
 .rodapeAnexo p{
     margin: 0;
 }
+
+.upGet{
+    text-decoration: none;/*Tirar sublinhado do link*/
+    color: inherit; /*Herdar cor*/
+}

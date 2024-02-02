@@ -1,0 +1,74 @@
+#tituloDetalhes{
+    width: 100%;
+    min-height: 10%;
+    margin: 0;
+}
+
+#tituloDetalhesSozinho{
+    width: 100%;
+    min-height: 50%;
+    margin: 0;
+}
+
+#divHoraData{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    min-height: 10%;
+
+}
+
+#dataDetalhes{
+    height: auto;
+}
+
+#divHoraDataSozinho{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    min-height: 20%;
+}
+
+#observacaoDetalhes{
+    width: 100%;
+    min-height: 50%;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+#divAnexoBotoes{
+
+    min-height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#contentAnexo
+{
+    width: 50%;
+}
+
+#anexoDetalhes{
+    height: 20vh;
+}
+
+#contentBotoes{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#contentBotoesSozinho{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

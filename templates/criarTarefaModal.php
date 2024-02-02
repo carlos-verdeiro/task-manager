@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/criarTarefa.css">
 <!-- Modal Criador de tarefa -->
 <div class="modal fade" id="novaTarefa" tabindex="-1" aria-labelledby="novaTarefa" aria-hidden="true">
         <div class="modal-dialog">
@@ -23,7 +24,7 @@
                         <div class="form-floating mb-3"><!--Input com a data que será realizada a tarefa-->
 
                             <input type="date" name="data" class="form-control" id="data" placeholder="Data" required>
-                            <label for="titulo">Data:</label>
+                            <label for="data">Data:</label>
 
                         </div>
 
