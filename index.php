@@ -27,7 +27,7 @@
 
 
 
-        <section id="detalhes" class="container-fluid col"><!--Detalhes da tarefa selecionada-->
+        <section id="detalhes" class="container-fluid p-2 col overflow-auto"><!--Detalhes da tarefa selecionada-->
             <?php include_once("templates/detalhesTarefas.php")?>
         </section>
 
@@ -36,7 +36,7 @@
 
 
 
-        <section id="tarefas" class="container-fluid col p-3 overflow-auto"><!--Lista de tarefas existentes-->
+        <section id="tarefas" class="container-fluid p-2 col overflow-auto"><!--Lista de tarefas existentes-->
             <?php include_once("templates/exibirTarefas.php")?>
         </section>
 

@@ -26,6 +26,8 @@ footer{
 }
 
 #detalhes{
-    background-color: rgb(245, 99, 99);
+
     height: 77vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }

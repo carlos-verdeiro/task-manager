@@ -45,7 +45,7 @@ if ($linhas) {
         echo '</a>';
     }
 } else {
-    echo include_once'images/empty.svg';
+    echo '<img src="images/empty.svg">';
     echo '
     
   
