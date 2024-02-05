@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/detalhesTarefas.css">
+
 <?php
 
 include_once("database/conexao.php");
@@ -63,10 +64,10 @@ if ($_GET) {
                     <img src="database/'.$arquivo.'" alt="Anexo: '.$nomeArquivo.'" id="anexoDetalhes" class="img-fluid">
                 </a>
                 </content>
-                    <content id="contentBotoes">
-                    <input type="button" value="Concluída" id="concluida" class=" btn btn-outline-success w-100 mb-2">
-                    <input type="button" value="Editar" id="editar" class=" btn btn-outline-warning w-100 mb-2">
-                    <input type="button" value="Excluir" id="excluir" class=" btn btn-outline-danger w-100 mb-2">
+                <content id="contentBotoes">
+                    <input type="button" value="Concluída" id="concluida" class=" btn btn-outline-success w-100 mb-2" name="conclusion" >
+                    <input type="button" value="Editar" id="editar" class=" btn btn-outline-warning w-100 mb-2" name="edit" >
+                    <input type="button" value="Excluir" id="excluir" class=" btn btn-outline-danger w-100 mb-2" name="excluded" >
                 </content>';
             }
             
@@ -84,3 +85,5 @@ if ($_GET) {
 } else {
     echo '<img src="images/task.svg">';
 }
+
+echo'<script src="js/detalhesTarefas.js"></script>';

@@ -7,7 +7,7 @@ $ligacao = $pdo->prepare("SELECT * FROM tarefas");
 
 $ligacao->execute();
 
-$linhas = $ligacao->fetchAll(PDO::FETCH_ASSOC); //resebe todas as linhas da tabela que foi retornada
+$linhas = $ligacao->fetchAll(PDO::FETCH_ASSOC); //recebe todas as linhas da tabela que foi retornada
 
 if ($linhas) {
     foreach ($linhas as $linha) { //O foreach vai percorrer todas as linhas da tabela
@@ -45,13 +45,13 @@ if ($linhas) {
         echo '</a>';
     }
 } else {
-    echo '<img src="images/empty.svg">';
+    echo '<img src="images/empty.svg" height="100%">';
     echo '
     
   
   <div class="toast position-fixed bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    <img src="images/calendario.png" class="rounded me-2" alt="calendario" height="20px">
+    <img src="images/icon.png" class="rounded me-2" alt="calendario" height="20px">
     <strong class="me-auto">Task Manager</strong>
     <small>Aviso</small>
     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
