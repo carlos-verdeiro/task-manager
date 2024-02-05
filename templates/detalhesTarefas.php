@@ -53,9 +53,9 @@ if ($_GET) {
             ';
             if ($selecionada['idAnexo'] == null) {
                 echo'<content id="contentBotoes">
-                    <input type="button" value="Concluída" id="concluida" class=" btn btn-success w-100 mb-2">
-                    <input type="button" value="Editar" id="editar" class=" btn btn-warning w-100 mb-2">
-                    <input type="button" value="Excluir" id="excluir" class=" btn btn-danger w-100 mb-2">
+                    <input type="button" value="Concluída" id="concluida" class=" btn btn-outline-success w-100 mb-2">
+                    <input type="button" value="Editar" id="editar" class=" btn btn-outline-warning w-100 mb-2">
+                    <input type="button" value="Excluir" id="excluir" class=" btn btn-outline-danger w-100 mb-2">
                 </content>';
             } else {
                 echo '<content id="contentAnexo">
@@ -64,9 +64,9 @@ if ($_GET) {
                 </a>
                 </content>
                     <content id="contentBotoes">
-                    <input type="button" value="Concluída" id="concluida" class=" btn btn-success w-100 mb-2">
-                    <input type="button" value="Editar" id="editar" class=" btn btn-warning w-100 mb-2">
-                    <input type="button" value="Excluir" id="excluir" class=" btn btn-danger w-100 mb-2">
+                    <input type="button" value="Concluída" id="concluida" class=" btn btn-outline-success w-100 mb-2">
+                    <input type="button" value="Editar" id="editar" class=" btn btn-outline-warning w-100 mb-2">
+                    <input type="button" value="Excluir" id="excluir" class=" btn btn-outline-danger w-100 mb-2">
                 </content>';
             }
             

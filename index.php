@@ -1,3 +1,27 @@
+<?php
+if (isset($_GET['insert'])) {
+    echo '<div class="position-fixed bottom-0 end-0 p-3 " style="z-index: 11">
+    <div id="myToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-success-subtle">
+        <strong class="me-auto">Aviso</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Tarefa criada com sucesso
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    var myToast = new bootstrap.Toast(document.getElementById("myToast"));
+    myToast.show();
+  </script>';
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -8,16 +32,24 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="images/calendario.ico" type="image/x-icon">
-    <title>Gerenciador de tarefas</title>
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+    <title>Task Manager</title>
 </head>
 
 <body>
     
     <header class="container-fluid"><!--CABEÇALHO-->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#novaTarefa">
+    <div id="divEsquerda">
+        <img src="images/iconWhite.png" alt="icon" id="iconTask">
+        <h4 id="taskTitle">Task Manager</h4>
+    </div>
+    <div id="divDireita">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#novaTarefa" id="buttonAddTarefa">
             Criar nova tarefa
         </button>
+    </div>
+        
+        
     </header>
 
     <main class="container-fluid row mx-auto text-center p-0"> <!--PRINCIPAL-->
@@ -46,7 +78,7 @@
     </main>
 
     <footer class="container-fluid"><!--RODAPÉ-->
-        ...
+        <h6 id="h6Footer">Projeto Realizado por <strong>Carlos Daniel Verdeiro</strong> - 2024</h6>
     </footer>
 
     
