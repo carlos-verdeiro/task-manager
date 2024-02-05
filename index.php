@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['insert'])) {
+if (isset($_GET['insert'])) {//Toast que foi criado com sucesso a tarefa
     echo '<div class="position-fixed bottom-0 end-0 p-3 " style="z-index: 11">
     <div id="myToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header bg-success-subtle">

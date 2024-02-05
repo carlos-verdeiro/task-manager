@@ -45,9 +45,11 @@ if ($res->rowCount() > 0) {
     echo'<div class="alert alert-success" role="alert">
     Cadastro realizado com sucesso!
   </div>';
-  header('location: ../index.php?taskDetail='.$idCriadoTarefa.'&insert=true');
+  
   if ($_FILES["anexo"]["error"] != 4)/*Verificando se o upload está vazio*/ {
     include_once("uploadArquivo.php");//Fazendo upload do arquivo para o servidor
+}else{
+    header('location: ../index.php?taskDetail='.$idCriadoTarefa.'&insert=true');
 }
   
 }
