@@ -1,28 +1,73 @@
 body{
-    background-color: rgb(249, 247, 201);
+    background-color: rgb(251, 250, 218);
 }
 
 header{
     height: 13vh;
-    background-color: brown;
+    background-color: rgb(67, 104, 80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
 }
 
 main{
     height: 77vh;
-    background-color: rgb(249, 247, 201);
+    background-color: rgb(251, 250, 218);
 }
 
 footer{
     height: 10vh;
-    background-color: blue;
+    background-color: rgb(173, 188, 159);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid black;
+}
+
+#h6Footer{
+    text-overflow: ellipsis;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#divEsquerda{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#divDireita{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#iconTask{
+    height: 100%;
+    overflow: hidden;
+    min-width:min-content;
+}
+
+#taskTitle{
+    color: rgb(255, 255, 255);
+    width: 50vw;
+    overflow:hidden;
 }
 
 #tarefas{
-    background-color: rgb(249, 247, 201);
-    overflow-y: auto;
+    background-color: rgb(251, 250, 218);
     height: 77vh;
     direction: ltr;
-    overflow-x: hidden;
 }
 
 #detalhes{
@@ -30,4 +75,5 @@ footer{
     height: 77vh;
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: rgb(251, 250, 218);
 }

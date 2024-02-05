@@ -18,7 +18,7 @@ if ($_GET) {
             $dataFormatada = DateTime::createFromFormat('Y-m-d', $selecionada["data"])->format('d/m/Y'); //formata para o padrão brasileiro a data
             
             if ($selecionada['idAnexo'] != null) {
-                $tarefa = $pdo->prepare("SELECT path FROM arquivos WHERE id = :idAnexo");
+                $tarefa = $pdo->prepare("SELECT path, nome FROM arquivos WHERE id = :idAnexo");
                 $tarefa->bindParam(':idAnexo', $selecionada['idAnexo']);
                 $tarefa->execute();
             
@@ -26,6 +26,7 @@ if ($_GET) {
             
                 if ($resultArquivo) {
                     $arquivo = $resultArquivo['path'];
+                    $nomeArquivo = $resultArquivo['nome'];
                 } else {
                     echo "Arquivo não encontrado";
                 }
@@ -51,19 +52,21 @@ if ($_GET) {
         <div id="divAnexoBotoes">
             ';
             if ($selecionada['idAnexo'] == null) {
-                echo'<content id="contentBotoes" class="p-3">
-                    <input type="button" value="Concluída" id="concluida" class=" btn btn-success w-100 mb-2">
-                    <input type="button" value="Editar" id="editar" class=" btn btn-warning w-100 mb-2">
-                    <input type="button" value="Excluir" id="excluir" class=" btn btn-danger w-100 mb-2">
+                echo'<content id="contentBotoes">
+                    <input type="button" value="Concluída" id="concluida" class=" btn btn-outline-success w-100 mb-2">
+                    <input type="button" value="Editar" id="editar" class=" btn btn-outline-warning w-100 mb-2">
+                    <input type="button" value="Excluir" id="excluir" class=" btn btn-outline-danger w-100 mb-2">
                 </content>';
             } else {
                 echo '<content id="contentAnexo">
-                    <img src="database/'.$arquivo.'" alt="Anexo" id="anexoDetalhes">
+                <a href="database/'.$arquivo.'" target="_blank">
+                    <img src="database/'.$arquivo.'" alt="Anexo: '.$nomeArquivo.'" id="anexoDetalhes" class="img-fluid">
+                </a>
                 </content>
-                    <content id="contentBotoes" class="p-3">
-                    <input type="button" value="Concluída" id="concluida" class=" btn btn-success w-100 mb-2">
-                    <input type="button" value="Editar" id="editar" class=" btn btn-warning w-100 mb-2">
-                    <input type="button" value="Excluir" id="excluir" class=" btn btn-danger w-100 mb-2">
+                    <content id="contentBotoes">
+                    <input type="button" value="Concluída" id="concluida" class=" btn btn-outline-success w-100 mb-2">
+                    <input type="button" value="Editar" id="editar" class=" btn btn-outline-warning w-100 mb-2">
+                    <input type="button" value="Excluir" id="excluir" class=" btn btn-outline-danger w-100 mb-2">
                 </content>';
             }
             

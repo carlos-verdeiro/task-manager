@@ -1,9 +1,9 @@
 .blocoTarefa {
-    background-color: bisque;
+    background-color: rgb(173, 188, 159);
     border-radius: 100px;
     height: auto;
-    min-height: 20vh;
-    max-height: 30vh;
+    min-height: 15vh;
+    max-height: 40vh;
     margin-top: 3vh;
     margin-bottom: 3vh;
     padding: 10px;
@@ -20,7 +20,7 @@
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 70%;
+    width: 63%;
     overflow: hidden;
 }
 
