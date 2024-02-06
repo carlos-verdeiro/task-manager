@@ -23,13 +23,13 @@
 
                         <div class="form-floating mb-3"><!--Input com a data que será realizada a tarefa-->
 
-                            <input type="date" name="data" class="form-control" id="data" placeholder="Data" required>
+                            <input type="date" name="data" class="form-control" id="data" placeholder="Data" min="<?php echo date('Y-m-d')?>" required>
                             <label for="data">Data:</label>
 
                         </div>
 
                         <div class="form-floating mb-3"><!--Horário que será realizado a terefa-->
-                            <input type="time" name="hora" id="hora" class="form-control" required >
+                            <input type="time" name="hora" id="hora" class="form-control" min="<?php echo date('Y-m-d\TH:i') ?>" required >
                             <label for="hora" class="form-label">Hora:</label>
                         </div>
 

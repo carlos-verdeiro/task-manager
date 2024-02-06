@@ -3,7 +3,7 @@
 
 include_once("database/conexao.php");
 
-$ligacao = $pdo->prepare("SELECT * FROM tarefas");
+$ligacao = $pdo->prepare("SELECT * FROM tarefas ORDER BY status ASC, data ASC, hora ASC, titulo ASC");
 
 $ligacao->execute();
 
@@ -11,6 +11,9 @@ $linhas = $ligacao->fetchAll(PDO::FETCH_ASSOC); //recebe todas as linhas da tabe
 
 if ($linhas) {
     foreach ($linhas as $linha) { //O foreach vai percorrer todas as linhas da tabela
+        $status = $linha['status'];
+        $titulo = ($status == 0 ? $linha["titulo"] : "<del>" .$linha["titulo"]."</del>" );
+        $observacao = ($status == 0 ? $linha["observacao"] : "TAREFA CONCLUÍDA!!!");
         echo '<a href="?taskDetail='.$linha["id"].'" class="upGet">';
         echo '<content class="blocoTarefa container-sm border border-black" value="' . $linha['id'] . '">';
 
@@ -26,16 +29,16 @@ if ($linhas) {
             echo '<p class="data">' . $dataFormatada . '</p>'; //exibe o padrão brasileiro
         } else {
             echo $hora;
-            echo '<h4 class="titulo">' . $linha["titulo"] . '</h4>';
+            echo '<h4 class="titulo">' . $titulo . '</h4>';
             echo '<p class="data">' . $dataFormatada . '</p>'; //exibe o padrão brasileiro
         }
         echo '</div>';
         echo '<div class="corpo">';
 
         if ($linha['observacao'] == "") {
-            echo '<h4 class="titulo">' . $linha["titulo"] . '</h4>';
+            echo '<h4 class="titulo">' . $titulo . '</h4>';
         } else {
-            echo '<p class="obs">' . $linha["observacao"] . '</p>';
+            echo '<p class="obs">' . $observacao . '</p>';
         }
 
         echo '</div>';

@@ -15,7 +15,8 @@ if ($_GET) {
 
     if ($tarefa) {
         foreach ($tarefa as $selecionada) {
-            $titulo = $selecionada['titulo'];
+            $status = $selecionada['status'];
+            $titulo = ($status == 0 ? $selecionada["titulo"] : "<del>" .$selecionada["titulo"]."</del>" );
             $observacao = $selecionada['observacao'];
             $horaPura = $selecionada['hora'];
             $hora = ($selecionada['intdia'] == 1) ? '<p class="hora">Dia inteiro</p>' : '<p class="hora">' . date('H:i', strtotime($selecionada['hora'])) . '</p>'; //Verifica e converte
@@ -41,7 +42,7 @@ if ($_GET) {
 
 
             if ($selecionada['observacao'] != "") {
-                echo '<h1 id="tituloDetalhes">' . $selecionada['titulo'] . '</h1>';
+                echo '<h1 id="tituloDetalhes">' . $titulo . '</h1>';
             }
             $divHoraData = ($selecionada['observacao'] != "") ? "divHoraData" : "divHoraDataSozinho";
             echo '<div id="' . $divHoraData . '">
@@ -52,7 +53,7 @@ if ($_GET) {
             if ($selecionada['observacao'] != "") {
                 echo '<p id="observacaoDetalhes">' . $selecionada['observacao'] . '</p>';
             } else {
-                echo '<h1 id="tituloDetalhesSozinho">' . $selecionada['titulo'] . '</h1>';
+                echo '<h1 id="tituloDetalhesSozinho">' . $titulo . '</h1>';
             }
 
             echo '
@@ -71,7 +72,7 @@ if ($_GET) {
                 </a>
                 </content>
                 <content id="contentBotoes">
-                    <input type="button" value="Concluída" id="concluida" class=" btn btn-outline-success w-100 mb-2" name="conclusion" >
+                    <input type="button" value="'.($selecionada['status'] == 0 ? "Concluir" : "Desconcluir").'" id="concluida" class=" btn btn-outline-success w-100 mb-2" name="conclusion" >
                     <button type="button" class="btn btn-outline-warning w-100 mb-2" data-bs-toggle="modal" data-bs-target="#edicao" id="buttonEdit" name="edit">Editar</button>
                     <input type="button" value="Excluir" id="excluir" class=" btn btn-outline-danger w-100 mb-2" name="excluded" >
                 </content>';
