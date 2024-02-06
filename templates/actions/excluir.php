@@ -1,3 +1,6 @@
+<link rel="shortcut icon" href="../../images/icon.ico" type="image/x-icon">
+<title>Excluir</title>
+
 <?php
 
 if (isset($_GET['taskDetail'])) {

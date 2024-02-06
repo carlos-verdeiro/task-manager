@@ -1,3 +1,6 @@
+<link rel="shortcut icon" href="../images/icon.ico" type="image/x-icon">
+<title>Arquivos</title>
+
 <?php
 
 $anexo = $_FILES["anexo"];

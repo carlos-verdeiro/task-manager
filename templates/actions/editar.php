@@ -1,3 +1,6 @@
+<link rel="shortcut icon" href="../../images/icon.ico" type="image/x-icon">
+<title>Editar</title>
+
 <link rel="stylesheet" href="css/editar.css">
 <!-- Modal Criador de tarefa -->
 <div class="modal fade" id="edicao" tabindex="-1" aria-labelledby="edicao" aria-hidden="true">

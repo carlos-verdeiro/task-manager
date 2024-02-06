@@ -1,4 +1,5 @@
-<title>Conclusão</title>
+<link rel="shortcut icon" href="../../images/icon.ico" type="image/x-icon">
+<title>Concluir</title>
 
 <?php
 
