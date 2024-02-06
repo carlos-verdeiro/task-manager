@@ -22,14 +22,15 @@ if ($_GET) {
             $dataPura = $selecionada['data'];
             $dataFormatada = DateTime::createFromFormat('Y-m-d', $selecionada["data"])->format('d/m/Y'); //formata para o padrão brasileiro a data
             $intDia = $selecionada['intdia'];
+            $idAnexo = $selecionada['idAnexo'];
 
             if ($selecionada['idAnexo'] != null) {
-                $tarefa = $pdo->prepare("SELECT path, nome FROM arquivos WHERE id = :idAnexo");
-                $tarefa->bindParam(':idAnexo', $selecionada['idAnexo']);
+                $tarefa = $pdo->prepare("SELECT * FROM arquivos WHERE id = :idAnexo");
+                $tarefa->bindParam(':idAnexo', $idAnexo);
                 $tarefa->execute();
 
                 $resultArquivo = $tarefa->fetch(PDO::FETCH_ASSOC);
-
+                
                 if ($resultArquivo) {
                     $arquivo = $resultArquivo['path'];
                     $nomeArquivo = $resultArquivo['nome'];

@@ -9,7 +9,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <form method="post" action="database/edicaoDatabase.php" enctype="multipart/form-data"><!--Formulário para criar tarefa-->
+                    <form method="post" action="database/edicaoDatabase.php?id=<?php echo $idAtual;?>" enctype="multipart/form-data"><!--Formulário para criar tarefa-->
                         <div class="form-floating mb-3"><!--Título principal da tarefa-->
                             <input value="<?php echo $titulo;?>" type="text" class="form-control" name="tituloEdicao" id="tituloEdicao" placeholder="Título" minlength="3" maxlength="40" required>
                             <label for="tituloEdicao">Título</label>
@@ -43,8 +43,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="anexoEdicao" class="form-label">Anexar imagem (Max: 2MB):</label>
-                            <input class="form-control" type="file" id="anexoEdicao" name="anexoEdicao" accept="image/*">
+                            <label for="anexoEdicao" class="form-label">Anexar outra imagem (Max: 2MB):</label>
+                            <input value="oioioi" class="form-control" type="file" id="anexoEdicao" name="anexoEdicao" accept="image/*">
                         </div>
                         <div class="text-danger form-control" role="alert" id="errorSpanFileEdicao">O arquivo é maior que 2MB</div>
 
@@ -53,8 +53,9 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-warning" id="rmAnexoEdicao">Remover anexo</button>
                             <button type="reset" class="btn btn-danger">Resetar</button>
-                            <button type="submit" class="btn btn-success" id="submitModalEdicao">Criar tarefa</button>
+                            <button type="submit" class="btn btn-success" id="submitModalEdicao">Atualizar tarefa</button>
                         </div>
+                        <input type="hidden" name="idAnexo" value="<?php echo $idAnexo;?>">
                     </form>
                 </div>
             </div>

@@ -7,7 +7,7 @@ if (isset($_GET['insert'])) {//Toast que foi criado com sucesso a tarefa
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body">
-        Tarefa criada com sucesso
+        Alteração bem sucedida
       </div>
     </div>
   </div>
