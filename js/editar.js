@@ -7,7 +7,8 @@ const rmAnexoEdicao = document.getElementById("rmAnexoEdicao");
 var erroAnexoEdicao = 0;
 
 
-function trocar() {
+
+function trocarEdicao() {
     if (checkDInteiroEdicao.checked) {
         horaEdicao.disabled = true;
         horaEdicao.value = "";

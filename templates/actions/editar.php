@@ -10,31 +10,35 @@
                 <div class="modal-body">
 
                     <form method="post" action="database/edicaoDatabase.php" enctype="multipart/form-data"><!--Formulário para criar tarefa-->
-<!--------------------------------------------AQUIIIIIIIIIIIIIIIIIIIIIIIIIII---------------------------------------------------->
                         <div class="form-floating mb-3"><!--Título principal da tarefa-->
-                            <input type="text" class="form-control" name="tituloEdicao" id="tituloEdicao" placeholder="Título" minlength="3" maxlength="40" required>
+                            <input value="<?php echo $titulo;?>" type="text" class="form-control" name="tituloEdicao" id="tituloEdicao" placeholder="Título" minlength="3" maxlength="40" required>
                             <label for="tituloEdicao">Título</label>
                         </div>
 
                         <div class="form-floating mb-3"><!--Observção da tarefa, é feita usando a tag textarea-->
-                            <textarea type="text" class="form-control" name="observacaoEdicao" id="observacaoEdicao" placeholder="Observação" maxlength="500" ></textarea>
+                            <textarea type="text" class="form-control" name="observacaoEdicao" id="observacaoEdicao" placeholder="Observação" maxlength="500" ><?php echo $observacao;?></textarea>
                             <label for="observacaoEdicao">Observação</label>
                         </div>
-
                         <div class="form-floating mb-3"><!--Input com a data que será realizada a tarefa-->
-
-                            <input type="date" name="dataEdicao" class="form-control" id="dataEdicao" placeholder="Data" required>
+                            <input value="<?php echo $dataPura;?>" type="date" name="dataEdicao" class="form-control" id="dataEdicao" placeholder="Data" required>
                             <label for="dataEdicao">Data:</label>
 
                         </div>
 
                         <div class="form-floating mb-3"><!--Horário que será realizado a terefa-->
-                            <input type="time" name="horaEdicao" id="horaEdicao" class="form-control" required >
+                            <input <?php ;if ($intDia == 1) {
+                                echo 'disabled value=""';
+                            }else{
+                                echo'value="'.$horaPura.'"';
+                            }
+                            ?> type="time" name="horaEdicao" id="horaEdicao" class="form-control" required >
                             <label for="horaEdicao" class="form-label">Hora:</label>
                         </div>
-
                         <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group"><!--Verificação do usuário que desativa o campo Horário-->
-                            <input type="checkbox" class="btn-check" id="dInteiroEdicao" name="dInteiroEdicao" autocomplete="off" onchange="trocar()">
+                            <input <?php if ($intDia == 1) {
+                                echo "checked";
+                            }
+                            ?> type="checkbox" class="btn-check" id="dInteiroEdicao" name="dInteiroEdicao" autocomplete="off" onchange="trocarEdicao()">
                             <label class="btn btn-outline-info" for="dInteiroEdicao">Dia inteiro</label>
                         </div>
 
@@ -45,13 +49,14 @@
                         <div class="text-danger form-control" role="alert" id="errorSpanFileEdicao">O arquivo é maior que 2MB</div>
 
 
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" id="rmAnexoEdicao">Remover anexo</button>
+                            <button type="reset" class="btn btn-danger">Resetar</button>
+                            <button type="submit" class="btn btn-success" id="submitModalEdicao">Criar tarefa</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" id="rmAnexoEdicao">Remover anexo</button>
-                    <button type="reset" class="btn btn-danger">Limpar campos</button>
-                    <button type="submit" class="btn btn-success" id="submitModalEdicao">Criar tarefa</button>
-                </div>
-                </form>
             </div>
         </div>
         <script src="js\editar.js"></script>

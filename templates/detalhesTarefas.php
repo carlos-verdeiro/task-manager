@@ -15,8 +15,13 @@ if ($_GET) {
 
     if ($tarefa) {
         foreach ($tarefa as $selecionada) {
+            $titulo = $selecionada['titulo'];
+            $observacao = $selecionada['observacao'];
+            $horaPura = $selecionada['hora'];
             $hora = ($selecionada['intdia'] == 1) ? '<p class="hora">Dia inteiro</p>' : '<p class="hora">' . date('H:i', strtotime($selecionada['hora'])) . '</p>'; //Verifica e converte
+            $dataPura = $selecionada['data'];
             $dataFormatada = DateTime::createFromFormat('Y-m-d', $selecionada["data"])->format('d/m/Y'); //formata para o padrão brasileiro a data
+            $intDia = $selecionada['intdia'];
 
             if ($selecionada['idAnexo'] != null) {
                 $tarefa = $pdo->prepare("SELECT path, nome FROM arquivos WHERE id = :idAnexo");
