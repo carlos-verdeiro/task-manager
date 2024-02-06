@@ -46,14 +46,14 @@ if (isset($_GET['insert'])) {//Toast que foi criado com sucesso a tarefa
     <div id="divDireita">
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#novaTarefa" id="buttonAddTarefa">
             Criar nova tarefa
-        </button>
+    </button>
+    
     </div>
         
         
     </header>
 
     <main class="container-fluid row mx-auto text-center p-0"> <!--PRINCIPAL-->
-
 
 
 
@@ -84,6 +84,7 @@ if (isset($_GET['insert'])) {//Toast que foi criado com sucesso a tarefa
     
     <?php
     include_once("templates/criarTarefaModal.php");
+    include_once("templates/actions/editar.php");
     ?>
 
 </body>
