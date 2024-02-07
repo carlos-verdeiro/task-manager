@@ -49,11 +49,43 @@ if ($_FILES["anexoEdicao"]["error"] != 4)/*Verificando se o upload está vazio*/
     if ($tarefa) {
         foreach ($tarefa as $selecionada) {
             $path = $selecionada['path'];
-        }
-    }
 
-    if (unlink($path)) {
-        echo "Arquivo excluído com sucesso.";
+
+            if (unlink($path)) {
+                echo "Arquivo excluído com sucesso.";
+
+                $anexo = $_FILES["anexoEdicao"];
+
+                if ($anexo['size'] > 2097152)
+                    die('Arquivo grande! MAX: 2MB');
+
+                if ($anexo['error'])
+                    die('Falha ao Enviar arquivo!');
+
+                $pasta = "archive/";
+                $nomeArquivo = $anexo['name'];
+                $novoNomeArquivo = uniqid();
+                $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+                $path = $pasta . $novoNomeArquivo . '.' . $extensao;
+
+                $uploadResposta = move_uploaded_file($anexo['tmp_name'], $path);
+
+                if (!$uploadResposta)
+                    die('Arquivo não enviado com sucesso!');
+
+                $arq = $pdo->prepare("UPDATE arquivos SET nome = :nome, path = :path WHERE id = :idAnexo");
+                $arq->bindValue(":nome", $nomeArquivo);
+                $arq->bindValue(":path", $path);
+                $arq->bindValue(":idAnexo", $idAnexo);
+                $arq->execute();
+
+                if ($arq->rowCount() == 0)
+                    die("Arquivo não cadastrado com sucesso!");
+                echo " Editado com sucesso";
+                header('location: ../index.php?taskDetail=' . $_GET["id"] . '&insert=true');
+            }
+        }
+    } else {
 
         $anexo = $_FILES["anexoEdicao"];
 
@@ -74,21 +106,22 @@ if ($_FILES["anexoEdicao"]["error"] != 4)/*Verificando se o upload está vazio*/
         if (!$uploadResposta)
             die('Arquivo não enviado com sucesso!');
 
-        $arq = $pdo->prepare("UPDATE arquivos SET nome = :nome, path = :path WHERE id = :idAnexo");
-        $arq->bindValue(":nome", $nomeArquivo);
-        $arq->bindValue(":path", $path);
-        $arq->bindValue(":idAnexo", $idAnexo);
+        $arq = $pdo->prepare("INSERT INTO arquivos(nome, path) VALUES (:nArquivo, :pArquivo)");
+        $arq->bindValue(":nArquivo", $nomeArquivo);
+        $arq->bindValue(":pArquivo", $path);
         $arq->execute();
 
         if ($arq->rowCount() == 0)
             die("Arquivo não cadastrado com sucesso!");
-        echo " Editado com sucesso";
+
+        //-------------UPDATE DA CHAVE ESTRANGEIRA-----------------
+        $idCriadoArquivo = $pdo->lastInsertId();
+
+        $ligacao = $pdo->prepare("UPDATE tarefas SET idAnexo=:idArquivo WHERE id=:idTarefa");
+        $ligacao->bindValue(":idArquivo", $idCriadoArquivo);
+        $ligacao->bindValue(":idTarefa", $_GET["id"]);
+        $ligacao->execute();
+
         header('location: ../index.php?taskDetail=' . $_GET["id"] . '&insert=true');
-    } else {
-        echo "Erro ao excluir o arquivo.";
     }
-
-
-    
 }
-header('location: ../index.php?taskDetail=' . $_GET["id"] . '&insert=true');
