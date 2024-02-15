@@ -27,17 +27,19 @@ if (isset($_GET['taskDetail'])) {
         $select->bindParam(':idAnexo', $arquivo);
         $select->execute();
         $resultado = $select->fetch(PDO::FETCH_ASSOC);
-        $path ='../../database/'.$resultado['path'];
 
-        $exclusao = $pdo->prepare("DELETE FROM arquivos WHERE id = :idAnexo ");
-        $exclusao->bindParam(':idAnexo', $arquivo);
-        $exclusao->execute();
+        if ($resultado['path']) {
+            $path = '../../database/' . $resultado['path'];
 
-        if (unlink($path)) {
-            echo "Arquivo excluído com sucesso.";
-            header('location: ../../index.php');
-        } else {
-            echo "Erro ao excluir o arquivo.";
+            $exclusao = $pdo->prepare("DELETE FROM arquivos WHERE id = :idAnexo ");
+            $exclusao->bindParam(':idAnexo', $arquivo);
+            $exclusao->execute();
+
+            if (unlink($path)) {
+                echo "Arquivo excluído com sucesso.";
+            } else {
+                echo "Erro ao excluir o arquivo.";
+            }
         }
 
         echo '<div class="alert alert-success" role="alert">
@@ -49,3 +51,5 @@ if (isset($_GET['taskDetail'])) {
             </div>';
     }
 }
+
+header('location: ../../index.php?insert=true');

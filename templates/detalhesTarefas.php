@@ -3,9 +3,9 @@
 <?php
 
 include_once("database/conexao.php");
-if ($_GET) {
-    $idAtual = $_GET['taskDetail'];
+if (isset($_GET['taskDetail'])) {
 
+    $idAtual = $_GET['taskDetail'];
 
     $tarefa = $pdo->prepare("SELECT * FROM tarefas WHERE id = $idAtual");
 
