@@ -13,7 +13,7 @@ if ($linhas) {
     foreach ($linhas as $linha) { //O foreach vai percorrer todas as linhas da tabela
         $status = $linha['status'];
         $titulo = $linha["titulo"];
-        $observacao = ($status == 0 ? $linha["observacao"] : "TAREFA CONCLUÍDA!!!");
+        $observacao = $linha["observacao"];
         echo '<a href="?taskDetail='.$linha["id"].'" class="upGet">';
         echo '<content class="blocoTarefa container-sm border border-black" value="' . $linha['id'] . '">';
 

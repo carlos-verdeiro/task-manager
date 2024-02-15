@@ -82,7 +82,6 @@ if ($_FILES["anexoEdicao"]["error"] != 4)/*Verificando se o upload está vazio*/
                 if ($arq->rowCount() == 0)
                     die("Arquivo não cadastrado com sucesso!");
                 echo " Editado com sucesso";
-                header('location: ../index.php?taskDetail=' . $_GET["id"] . '&insert=true');
             }
         }
     } else {
@@ -121,7 +120,6 @@ if ($_FILES["anexoEdicao"]["error"] != 4)/*Verificando se o upload está vazio*/
         $ligacao->bindValue(":idArquivo", $idCriadoArquivo);
         $ligacao->bindValue(":idTarefa", $_GET["id"]);
         $ligacao->execute();
-
-        header('location: ../index.php?taskDetail=' . $_GET["id"] . '&insert=true');
     }
 }
+header('location: ../index.php?taskDetail=' . $_GET["id"] . '&insert=true');

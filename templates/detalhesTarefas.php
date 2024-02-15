@@ -61,7 +61,7 @@ if ($_GET) {
             ';
             if ($selecionada['idAnexo'] == null) {
                 echo '<content id="contentBotoes">
-                    <input type="button" value="Concluída" id="concluida" class=" btn btn-outline-success w-100 mb-2">
+                    <input type="button" value="'.($selecionada['status'] == 0 ? "Concluir" : "Desconcluir").'" id="concluida" class=" btn btn-outline-success w-100 mb-2">
                     <button type="button" class="btn btn-outline-warning w-100 mb-2" data-bs-toggle="modal" data-bs-target="#edicao" id="buttonEdit" name="edit">Editar</button>
                     <input type="button" value="Excluir" id="excluir" class=" btn btn-outline-danger w-100 mb-2">
                 </content>';
