@@ -33,13 +33,13 @@
                             <label for="hora" class="form-label">Hora:</label>
                         </div>
 
-                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group"><!--Verificação do usuário que desativa o campo Horário-->
+                        <div class="btn-group w-100" role="group" aria-label="Basic checkbox toggle button group"><!--Verificação do usuário que desativa o campo Horário-->
                             <input type="checkbox" class="btn-check" id="dInteiro" name="dInteiro" autocomplete="off" onchange="trocar()">
                             <label class="btn btn-outline-info" for="dInteiro">Dia inteiro</label>
                         </div>
 
                         <div class="mb-3">
-                            <label for="anexo" class="form-label">Anexar imagem (Max: 2MB):</label>
+                            <label for="anexo" class="form-label w-100 text-center">Anexar imagem (Max: 2MB):</label>
                             <input class="form-control" type="file" id="anexo" name="anexo" accept="image/*">
                         </div>
                         <div class="text-danger form-control" role="alert" id="errorSpanFile">O arquivo é maior que 2MB</div>

@@ -83,7 +83,6 @@ if (isset($_GET['taskDetail'])) {
 
             
             echo '</div>';
-            include_once("templates/actions/editar.php");
         }
     } else {
         echo '<img src="images/task.svg">';
@@ -93,3 +92,5 @@ if (isset($_GET['taskDetail'])) {
 }
 
 echo '<script src="js/detalhesTarefas.js"></script>';
+
+include_once("templates/actions/editar.php");

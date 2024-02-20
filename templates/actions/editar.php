@@ -37,7 +37,7 @@
                             ?> type="time" name="horaEdicao" id="horaEdicao" class="form-control" required >
                             <label for="horaEdicao" class="form-label">Hora:</label>
                         </div>
-                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group"><!--Verificação do usuário que desativa o campo Horário-->
+                        <div class="btn-group w-100" role="group" aria-label="Basic checkbox toggle button group"><!--Verificação do usuário que desativa o campo Horário-->
                             <input <?php if ($intDia == 1) {
                                 echo "checked";
                             }
