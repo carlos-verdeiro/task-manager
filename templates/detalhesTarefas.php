@@ -81,8 +81,9 @@ if (isset($_GET['taskDetail'])) {
 
 
 
-
+            
             echo '</div>';
+            include_once("templates/actions/editar.php");
         }
     } else {
         echo '<img src="images/task.svg">';

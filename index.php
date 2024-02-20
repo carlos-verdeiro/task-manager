@@ -82,7 +82,6 @@
 
   <?php
   include_once("templates/criarTarefaModal.php");
-  include_once("templates/actions/editar.php");
   ?>
 
 </body>
