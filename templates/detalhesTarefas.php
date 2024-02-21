@@ -16,7 +16,8 @@ if (isset($_GET['taskDetail'])) {
     if ($tarefa) {
         foreach ($tarefa as $selecionada) {
             $status = $selecionada['status'];
-            $titulo = ($status == 0 ? $selecionada["titulo"] : "<del>" .$selecionada["titulo"]."</del>" );
+            $titulo = $selecionada["titulo"];
+            $tituloExibicao = ($status == 0 ? $selecionada["titulo"] : "<del>" .$selecionada["titulo"]."</del>" );
             $observacao = $selecionada['observacao'];
             $horaPura = $selecionada['hora'];
             $hora = ($selecionada['intdia'] == 1) ? '<p class="hora">Dia inteiro</p>' : '<p class="hora">' . date('H:i', strtotime($selecionada['hora'])) . '</p>'; //Verifica e converte
@@ -42,7 +43,7 @@ if (isset($_GET['taskDetail'])) {
 
 
             if ($selecionada['observacao'] != "") {
-                echo '<h1 id="tituloDetalhes">' . $titulo . '</h1>';
+                echo '<h1 id="tituloDetalhes">' . $tituloExibicao . '</h1>';
             }
             $divHoraData = ($selecionada['observacao'] != "") ? "divHoraData" : "divHoraDataSozinho";
             echo '<div id="' . $divHoraData . '">
@@ -53,7 +54,7 @@ if (isset($_GET['taskDetail'])) {
             if ($selecionada['observacao'] != "") {
                 echo '<p id="observacaoDetalhes">' . $selecionada['observacao'] . '</p>';
             } else {
-                echo '<h1 id="tituloDetalhesSozinho">' . $titulo . '</h1>';
+                echo '<h1 id="tituloDetalhesSozinho">' . $tituloExibicao . '</h1>';
             }
 
             echo '
