@@ -4,7 +4,7 @@ Este é um simples projeto de gerenciador de tarefas desenvolvido em PHP para fi
 
 ## Acesso Online
 
-Você pode acessar a versão online deste projeto [aqui](http://tasksmanager.rf.gd/).
+Você pode acessar a versão online deste projeto [aqui](http://tasksmanager.rf.gd/?i=1).
 
 ## Funcionalidades
 
