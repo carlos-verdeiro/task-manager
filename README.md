@@ -2,10 +2,6 @@
 
 Este é um simples projeto de gerenciador de tarefas desenvolvido em PHP para fins de estudo e prática. Com este gerenciador de tarefas, os usuários podem criar, visualizar, atualizar e excluir tarefas, facilitando a organização de suas atividades diárias.
 
-## Acesso Online
-
-Você pode acessar a versão online deste projeto [aqui](http://tasksmanager.rf.gd/?i=1).
-
 ## Funcionalidades
 
 - **Cadastro de Tarefas:** Os usuários podem adicionar novas tarefas especificando o título, descrição, data de vencimento e horário.
